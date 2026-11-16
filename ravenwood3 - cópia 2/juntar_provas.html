@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Investigação - Caso Ravenwood</title>
+    <!-- Importação das fontes clássicas -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <!-- Ligação ao CSS -->
+    <link rel="stylesheet" href="css/juntar_provas.css">
+</head>
+<body> 
+    <audio id="musicaProvas" loop src="audio/provas.mp3"></audio>
+    <button id="botaoSom">🔇</button>
+
+    <div class="painel-container">
+        <h1 class="titulo-painel">PAREDE DE EVIDÊNCIAS - CASO RAVENWOOD</h1>
+        <p class="subtitulo-painel">Conecte os pontos, cruze os depoimentos dos suspeitos e prepare-se para apontar o verdadeiro culpado.</p>
+
+        <!-- Fundo do quadro de detetive com as linhas vermelhas -->
+        <div class="cortica-grid">
+
+            <!-- LINHAS / CORDAS VERMELHAS DE CONEXÃO -->
+            <div class="linha-vermelha linha-1"></div>
+            <div class="linha-vermelha linha-2"></div>
+
+            <!-- 1. VANESSA RAVENWOOD (A CULPADA) -->
+            <div class="cartao-evidencia destaque-culpado">
+                <h3>⚠️ Vanessa Ravenwood (Filha)</h3>
+                <img src="img/vanessainterrogatorio.jpg" alt="Vanessa Interrogatório">
+                <p><strong>Álibi:</strong> Disse que estava dormindo no quarto e não ouviu nada na noite do crime.</p>
+                <p class="fala-suspeito">"EU QUERIA AQUELA MULHER MORTA! ... Eu jamais teria um livro de ervas medicinais."</p>
+                <div class="tag-pista tag-perigo">Pista: Frasco de Beladona & Ódio por Elena</div>
+            </div>
+
+            <!-- 2. THOMAS RAVENWOOD -->
+            <div class="cartao-evidencia">
+                <h3>🧳 Thomas Ravenwood (Sobrinho)</h3>
+                <img src="img/thomasinterrogatorio.jpg" alt="Thomas Interrogatório">
+                <p><strong>Álibi:</strong> Bebia na sala e discutiu com o tio por dinheiro às 23:30. Deixou o relógio cair.</p>
+                <p class="fala-suspeito">"Tivemos uma discussão acalorada, talvez eu tenha deixado o relógio cair, mas não o matei."</p>
+                <div class="tag-pista">Pista: Dívidas de jogo & Relógio na cena</div>
+            </div>
+
+            <!-- 3. DR. VALENTINE -->
+            <div class="cartao-evidencia">
+                <h3>📜 Dr. Valentine (Advogado)</h3>
+                <img src="img/advogadointerrogatorio.jpg" alt="Dr. Valentine Interrogatório">
+                <p><strong>Depoimento:</strong> Confirmou a alteração do testamento para adicionar Elena Austen como herdeira.</p>
+                <p class="fala-suspeito">"Edmund planejava adicionar mais uma pessoa ao testamento... pretendia pedir Elena em casamento."</p>
+                <div class="tag-pista">Pista: Testamento alterado & Vício de Thomas</div>
+            </div>
+
+            <!-- 4. ELENA AUSTEN -->
+            <div class="cartao-evidencia">
+                <h3>🗝️ Elena Austen (Empregada)</h3>
+                <img src="img/empregadainterrogatorio.jpg" alt="Elena Interrogatório">
+                <p><strong>Depoimento:</strong> Preparou o café da noite e notou que já havia uma xícara na cozinha.</p>
+                <p class="fala-suspeito">"As xícaras eram iguais e talvez eu tenha me confundido... SERÁ QUE HAVIA ALGO NAQUELE COPO?"</p>
+                <div class="tag-pista">Pista: Xícaras trocadas & Romance com Edmund</div>
+            </div>
+
+            <!-- 5. EVIDÊNCIAS DA CASA (Cozinha e Sala) -->
+            <div class="cartao-evidencia">
+                <h3>☕ Evidências da Mansão</h3>
+                <img src="img/cozinha_geral.jpg" alt="Cozinha Geral">
+                <p><strong>Local do Crime:</strong> Xícara com odor químico forte, frasco sem rótulo na lixeira da cozinha e minutas financeiras na sala de reunião.</p>
+                <p class="fala-suspeito">"O chá foi envenenado com extrato de beladona letal administrado na hora certa."</p>
+                <div class="tag-pista">Pista: Arma do Crime (Beladona)</div>
+            </div>
+
+        </div>
+
+        <!-- Botões de Ação Final -->
+        <div class="painel-acoes">
+            <button id="btnAcusar" class="btn-acao btn-acusar">⚖️ Fazer Acusação Final</button>
+            <button id="btnVoltar" class="btn-acao btn-voltar">⬅️ Voltar ao Menu Principal</button>
+        </div>
+    </div>
+
+    <!-- Ligação ao JS -->
+    <script src="js/juntar_provas.js"></script>
+</body>
+</html>

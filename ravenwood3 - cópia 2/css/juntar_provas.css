@@ -1,0 +1,235 @@
+:root {
+    --gold-main: #d4a359;
+    --gold-dim: #a38550;
+    --bg-cortica: #3b2a1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-cortica);
+    background-image: radial-gradient(circle, #4a3520 0%, #1f140c 100%);
+    color: #dcd0bc;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.painel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-painel {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: var(--gold-main);
+    text-shadow: 2px 2px 10px #000000;
+    margin-bottom: 5px;
+}
+
+.subtitulo-painel {
+    font-size: 13px;
+    color: var(--gold-dim);
+    margin-bottom: 25px;
+}
+
+/* PAREDE DE INVESTIGAÇÃO COM AS LINHAS VERMELHAS */
+.cortica-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 20px;
+    background: rgba(30, 20, 12, 0.6);
+    border: 4px solid #2a1a0e;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* SIMULAÇÃO DAS LINHAS VERMELHAS DE LIGAÇÃO (CORDAS DE DETETIVE) */
+.linha-vermelha {
+    position: absolute;
+    background-color: #b30000;
+    box-shadow: 0 0 4px rgba(255, 0, 0, 0.8);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.linha-1 {
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    transform: rotate(10deg);
+    opacity: 0.85;
+}
+
+.linha-2 {
+    top: 65%;
+    left: 15%;
+    width: 70%;
+    height: 3px;
+    transform: rotate(-12deg);
+    opacity: 0.85;
+}
+
+/* CARTÕES DE EVIDÊNCIA */
+.cartao-evidencia {
+    position: relative;
+    z-index: 2;
+    background: #e8dbb8;
+    color: #1c1813;
+    border: 1px solid #786448;
+    border-bottom: 3px solid #4a3c28;
+    padding: 15px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+    transform: rotate(-1deg);
+    transition: transform 0.2s ease;
+}
+
+.cartao-evidencia:nth-child(even) {
+    transform: rotate(1.2deg);
+}
+
+.destaque-culpado {
+    background: #f4e4bc;
+    border: 2px solid #8b0000;
+}
+
+.cartao-evidencia:hover {
+    transform: scale(1.03) rotate(0deg);
+    z-index: 10;
+}
+
+.cartao-evidencia h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: #3a2e21;
+    border-bottom: 1px dashed #786448;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.cartao-evidencia img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #544533;
+    margin-bottom: 8px;
+    filter: sepia(0.3) contrast(1.1);
+}
+
+.cartao-evidencia p {
+    font-size: 11px;
+    line-height: 1.35;
+    color: #2b231c;
+    margin-bottom: 5px;
+}
+
+/* ESTILO DA FALA DO SUSPEITO DENTRO DO CARTÃO */
+.fala-suspeito {
+    font-style: italic;
+    font-size: 10px;
+    color: #4a3c28;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 2px solid #786448;
+    padding: 4px 6px;
+    margin: 6px 0;
+}
+
+.tag-pista {
+    display: inline-block;
+    background: #384233;
+    color: #b5cca6;
+    font-size: 9.5px;
+    padding: 3px 6px;
+    border-radius: 2px;
+    margin-top: 4px;
+}
+
+.tag-perigo {
+    background: #8b0000 !important;
+    color: #ffffff !important;
+}
+
+/* BOTÕES DE AÇÃO */
+.painel-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.btn-acao {
+    padding: 10px 20px;
+    font-family: 'Special Elite', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-acusar {
+    background: #8b0000;
+    color: #ffffff;
+    border: 1px solid #ff4d4d;
+}
+
+.btn-acusar:hover {
+    background: #a30000;
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+}
+
+.btn-voltar {
+    background: #1c1813;
+    color: #c9b99a;
+    border: 1px solid #786448;
+}
+
+.btn-voltar:hover {
+    background: #d4a359;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .cortica-grid {
+        grid-template-columns: 1fr;
+    }
+    .linha-vermelha {
+        display: none;
+    }
+}
+/* BOTÃO DE SOM */
+#botaoSom {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    background: rgba(20, 16, 12, 0.85);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-main);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+#botaoSom:hover {
+    background: var(--gold-main);
+    color: #120e0a;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interrogatório - O Caso de Ravenwood</title>
+    <link rel="stylesheet" href="css/interrogatorio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- MÚSICA DE FUNDO -->
+    <audio id="musicaInterrogatorio" loop src="audio/interrogatorio.mp3"></audio>
+
+    <button id="botaoSom">🔊</button>
+
+    <!-- TELA 1: SELEÇÃO DE SUSPEITOS -->
+    <main id="telaSelecao" class="tela ativa">
+        <div class="fundo sala-interrogatorio"></div>
+        <div class="overlay forte"></div>
+
+        <div class="conteudo-selecao">
+            <h1 class="titulo-selecao">QUAL SUSPEITO VOCÊ QUER INVESTIGAR?</h1>
+            
+            <div class="grid-suspeitos">
+                <button class="card-suspeito" data-id="thomas">
+                    <span class="nome">THOMAS RAVENWOOD</span>
+                    <span class="cargo">SOBRINHO</span>
+                </button>
+                <button class="card-suspeito" data-id="advogado">
+                    <span class="nome">DR. VALENTINE</span>
+                    <span class="cargo">ADVOGADO</span>
+                </button>
+                <button class="card-suspeito" data-id="empregada">
+                    <span class="nome">ELENA AUSTEN</span>
+                    <span class="cargo">EMPREGADA</span>
+                </button>
+                <button class="card-suspeito" data-id="vanessa">
+                    <span class="nome">VANESSA RAVENWOOD</span>
+                    <span class="cargo">FILHA</span>
+                </button>
+            </div>
+
+            <button id="btnVoltarInicio" class="btn-secundario oculto">← VOLTAR ÀS OPÇÕES DE INVESTIGAÇÃO</button>
+        </div>
+    </main>
+
+    <!-- TELA 2: SALA DE INTERROGATÓRIO DO PERSONAGEM -->
+    <main id="telaInterrogatorio" class="tela">
+        <div class="fundo cenario-personagem" id="bgPersonagem"></div>
+        <div class="overlay suave"></div>
+
+        <div class="interface-interrogatorio">
+            <!-- CAIXA DE DIÁLOGO E RESPOSTAS -->
+            <div class="caixa-dialogo">
+                <h2 id="nomePersonagem">NOME</h2>
+                <p id="falaPersonagem">"..."</p>
+            </div>
+
+            <!-- OPÇÕES DE PERGUNTAS -->
+            <div class="container-perguntas" id="containerPerguntas">
+                <!-- Gerado via Javascript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- CADERNO DE ANOTAÇÕES -->
+    <button id="btnCaderno">📖 CADERNO</button>
+    <div id="modalCaderno" class="modal-caderno oculto">
+        <div class="conteudo-caderno">
+            <button id="fecharCaderno">✖</button>
+            <h2>CADERNO DE ANOTAÇÕES</h2>
+            <div class="divisoria"></div>
+            <div id="listaAnotacoes">
+                <p class="caderno-vazio">Nenhuma anotação registrada ainda.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSIÇÃO FADE OUT / FADE IN -->
+    <div id="overlayTransicao" class="overlay-transicao"></div>
+
+    <script src="js/interrogatorio.js"></script>
+</body>
+</html>

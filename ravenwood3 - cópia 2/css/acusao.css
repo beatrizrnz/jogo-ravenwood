@@ -1,0 +1,253 @@
+:root {
+    --gold-main: #d4a359;
+    --gold-dim: #a38550;
+    --blood-red: #8b0000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0c0a08;
+    color: #dcd0bc;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.tela {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tela.ativa {
+    display: flex;
+}
+
+/* FUNDOS */
+.fundo-sala {
+    position: fixed;
+    inset: 0;
+    background: url('../img/acusacao_sala.jpg') center/cover no-repeat;
+    z-index: -2;
+}
+
+.fundo-desfecho {
+    position: fixed;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transition: background-image 0.5s ease;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(15, 12, 9, 0.75) 0%, rgba(5, 4, 3, 0.95) 100%);
+    z-index: -1;
+}
+
+.overlay-desfecho {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 6, 5, 0.96) 25%, rgba(8, 6, 5, 0.45) 100%);
+    z-index: -1;
+}
+
+/* BOTÃO DE SOM */
+#botaoSom {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    background: rgba(20, 16, 12, 0.85);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-main);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* CONTEÚDO DE ESCOLHA */
+.conteudo-acusacao {
+    max-width: 1050px;
+    width: 100%;
+    text-align: center;
+}
+
+.titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: var(--gold-main);
+    text-shadow: 2px 2px 12px #000;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #c9b99a;
+    margin-bottom: 30px;
+}
+
+.grid-suspeitos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card-acusar {
+    background: #1a1510;
+    border: 1px solid #5c4b32;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.card-acusar:hover {
+    transform: translateY(-6px);
+    border-color: #ff4d4d;
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.6);
+}
+
+.card-acusar img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 1px solid #3a2e21;
+    margin-bottom: 10px;
+    filter: contrast(1.1);
+}
+
+.card-acusar h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--gold-main);
+    margin-bottom: 4px;
+}
+
+.card-acusar span {
+    font-size: 11px;
+    color: #9e8e74;
+}
+
+/* CAIXA DO DESFECHO FINAL */
+.caixa-final {
+    max-width: 780px;
+    width: 100%;
+    background: rgba(18, 14, 10, 0.92);
+    border: 1px solid #786448;
+    border-top: 3px solid var(--gold-main);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px #000;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+}
+
+.badge.vitoria {
+    background: #234220;
+    color: #b7e8b2;
+    border: 1px solid #4e8c48;
+}
+
+.badge.derrota {
+    background: var(--blood-red);
+    color: #fff;
+    border: 1px solid #ff4d4d;
+}
+
+.caixa-final h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    color: var(--gold-main);
+    margin-bottom: 15px;
+}
+
+.caixa-final p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #e6dcc8;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* BOTÕES */
+.acoes-final {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 12px 22px;
+    font-family: 'Special Elite', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-principal {
+    background: var(--gold-main);
+    color: #120e0a;
+    border: 1px solid #fff2d6;
+    font-weight: bold;
+}
+
+.btn-principal:hover {
+    background: #e8b96d;
+}
+
+.btn-secundario {
+    background: #1c1813;
+    color: #c9b99a;
+    border: 1px solid #786448;
+}
+
+.btn-secundario:hover {
+    background: #332b22;
+    color: #fff;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* TRANSIÇÃO */
+.overlay-transicao {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 100;
+}
+
+.overlay-transicao.ativo {
+    opacity: 1;
+    pointer-events: all;
+}

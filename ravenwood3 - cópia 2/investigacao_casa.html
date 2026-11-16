@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigação da Mansão - O Caso de Ravenwood</title>
+    <link rel="stylesheet" href="css/investigacao_casa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- MÚSICA DE FUNDO -->
+    <audio id="musicaInvestigacao" loop src="audio/casa.mp3"></audio>
+    <button id="botaoSom">🔊</button>
+
+    <!-- TELA 1: PLANTA DA MANSÃO -->
+    <main id="telaPlanta" class="tela ativa">
+        <div class="fundo sala-interrogatorio"></div>
+        <div class="overlay forte"></div>
+
+        <div class="conteudo-planta">
+            <h1 class="titulo-planta">PLANTA DA MANSÃO RAVENWOOD</h1>
+            <p class="subtitulo-planta">Selecione o cômodo que deseja investigar:</p>
+
+            <!-- MAPA DA PLANTA COM OS BOTÕES SOBREPOSTOS -->
+        <div class="mapa-container">
+            <img src="img/planta_casa.jpg" alt="Planta da Mansão" class="imagem-planta">
+
+            <!-- BOTÕES REPOSICIONADOS E ALINHADOS COM A PLANTA -->
+            <button class="ponto-commodo" style="top: 28%; left: 22%;" data-local="biblioteca"> BIBLIOTECA</button>
+            <button class="ponto-commodo" style="top: 20%; left: 52%;" data-local="cozinha"> COZINHA</button>
+            <button class="ponto-commodo" style="top: 72%; left: 22%;" data-local="sala_reuniao"> SALA DE REUNIÃO</button>
+            <button class="ponto-commodo" style="top: 28%; left: 82%;" data-local="quarto_thomas"> QUARTO DO THOMAS</button>
+            <button class="ponto-commodo" style="top: 72%; left: 65%;" data-local="quarto_vanessa"> QUARTO DA VANESSA</button>
+            <button class="ponto-commodo" style="top: 72%; left: 85%;" data-local="quarto_elena"> QUARTO DA ELENA</button>
+        </div>
+
+            <button id="btnVoltarMenu" class="btn-pergunta fim-btn">← VOLTAR AO MENU PRINCIPAL</button>
+        </div>
+    </main>
+
+    <!-- TELA 2: SALA/CÔMMODO SENDO INVESTIGADO -->
+    <main id="telaCommodo" class="tela">
+        <div id="fundoCommodo" class="fundo"></div>
+        <div class="overlay suave"></div>
+
+        <div class="interface-interrogatorio">
+            <!-- CAIXA DE DIÁLOGO E DESCRITIVO -->
+            <div class="caixa-dialogo">
+                <h2 id="nomeLocal">NOME DO LOCAL</h2>
+                <p id="descricaoLocal">"..."</p>
+            </div>
+
+            <!-- BOTÕES DE OPÇÕES DE PISTAS -->
+            <div class="container-perguntas" id="containerPistas">
+                <!-- Gerado dinamicamente via JS -->
+            </div>
+
+            <button id="btnVoltarPlanta" class="btn-pergunta fim-btn">← VOLTAR À PLANTA DA MANSÃO</button>
+        </div>
+    </main>
+
+    <!-- CADERNO DE ANOTAÇÕES -->
+    <button id="btnCaderno">📖 CADERNO</button>
+    <div id="modalCaderno" class="modal-caderno oculto">
+        <div class="conteudo-caderno">
+            <button id="fecharCaderno">✖</button>
+            <h2>CADERNO DE ANOTAÇÕES</h2>
+            <div class="divisoria"></div>
+            <div id="listaAnotacoes">
+                <p class="caderno-vazio">Nenhuma anotação registrada ainda.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY DE TRANSIÇÃO (FADE) -->
+    <div id="overlayTransicao" class="overlay-transicao"></div>
+
+
+    <script src="js/investigacao_casa.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acusação Final - O Caso de Ravenwood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/acusao.css">
+</head>
+<body>
+
+    <audio id="musicaAcusacao" loop src="audio/jazz.mp3"></audio>
+    <button id="botaoSom">🔇</button>
+
+    <!-- TELA 1: ESCOLHA DO CULPADO -->
+    <main id="telaEscolha" class="tela ativa">
+        <div class="fundo-sala"></div>
+        <div class="overlay"></div>
+
+        <div class="conteudo-acusacao">
+            <h1 class="titulo">O VEREDITO FINAL</h1>
+            <p class="subtitulo">Todos estão reunidos na biblioteca. As provas estão na mesa. Quem matou Edmund Ravenwood?</p>
+
+            <div class="grid-suspeitos">
+                <!-- VANESSA -->
+                <div class="card-acusar" data-suspeito="vanessa">
+                    <img src="img/vanessainterrogatorio.jpg" alt="Vanessa Ravenwood">
+                    <h3>VANESSA RAVENWOOD</h3>
+                    <span>A Filha</span>
+                </div>
+
+                <!-- THOMAS -->
+                <div class="card-acusar" data-suspeito="thomas">
+                    <img src="img/thomasinterrogatorio.jpg" alt="Thomas Ravenwood">
+                    <h3>THOMAS RAVENWOOD</h3>
+                    <span>O Sobrinho</span>
+                </div>
+
+                <!-- DR. VALENTINE -->
+                <div class="card-acusar" data-suspeito="advogado">
+                    <img src="img/advogadointerrogatorio.jpg" alt="Dr. Valentine">
+                    <h3>DR. VALENTINE</h3>
+                    <span>O Advogado</span>
+                </div>
+
+                <!-- ELENA -->
+                <div class="card-acusar" data-suspeito="elena">
+                    <img src="img/empregadainterrogatorio.jpg" alt="Elena Austen">
+                    <h3>ELENA AUSTEN</h3>
+                    <span>A Empregada</span>
+                </div>
+            </div>
+
+            <button id="btnVoltarProvas" class="btn-secundario">⬅️ Rever Parede de Provas</button>
+        </div>
+    </main>
+
+    <!-- TELA 2: DESFECHO / FINAL DO JOGO -->
+    <main id="telaDesfecho" class="tela">
+        <div id="fundoDesfecho" class="fundo-desfecho"></div>
+        <div class="overlay-desfecho"></div>
+
+        <div class="caixa-final">
+            <span id="badgeResultado" class="badge">CASO ENCERRADO</span>
+            <h2 id="tituloDesfecho">TÍTULO DO FINAL</h2>
+            <p id="textoDesfecho">Texto narrativo do final...</p>
+
+            <div class="acoes-final">
+                <button id="btnTentarNovamente" class="btn-secundario oculto">🔄 Tentar Outra Acusação</button>
+                <button id="btnReiniciarJogo" class="btn-principal">🏠 Voltar ao Início do Jogo</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlayTransicao" class="overlay-transicao"></div>
+
+    <script src="js/acusao.js"></script>
+</body>
+</html>
